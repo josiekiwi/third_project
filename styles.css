@@ -1,0 +1,115 @@
+body {
+    font-family: 'Kumbh Sans', sans-serif!important;
+    background-color: lightgrey;
+    overflow: hidden;
+}
+
+.card {
+    width: 90vw;
+    height: 85vh;
+    margin-top: 10vh;
+    margin-left: 5vw;
+}
+
+.checkout-menu-container {
+    float: left;
+}
+
+.menu-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar {
+    border-bottom: 1px solid lightgrey;
+}
+
+.nav-item {
+    /* padding-right: 40px; */
+    padding-bottom: 10px;
+}
+
+#header-menu-shopping-cart {
+    float: right;
+}
+
+#avatar {
+    height: 50px;
+    width: 50px;
+}
+
+#header-image {
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+}
+
+#thumbnail-1,
+#thumbnail-2,
+#thumbnail-3,
+#thumbnail-4 {
+    height: 70px;
+    width: 70px;
+    border-radius: 20px;
+    padding: 5px;
+    margin-left: 2px;
+}
+
+.navContainer {
+    float: right;
+    text-align: right;
+}
+
+.test {
+    text-align: right;
+}
+
+
+/* Anything Cart Related!! */
+
+
+/*https://www.youtube.com/watch?v=18Jvyp60Vbg&t=460s*/
+
+.cart {
+    position: fixed;
+    top: 200px;
+    right: -100%;
+    width: 350px;
+    min-height: 230px;
+    padding: 20px;
+    background: white;
+    box-shadow: 8px 10px 10px 3px #cfcccc;
+    z-index: 5000;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.cart.active {
+    right: 200px;
+}
+
+.cart.checkout {
+    display: none;
+}
+
+h3 {
+    border-bottom: solid 1px rgb(226, 220, 220);
+    padding-bottom: 20px;
+    font-size: 20px!important;
+}
+
+.cart-box {
+    padding: 5px;
+}
+
+.cart-img {
+    height: 50px;
+    width: 50px;
+    float: left;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.checkout-amount.none {
+    display: none;
+}

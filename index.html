@@ -1,44 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+    <!--main section of landing page, made as a card to give the border for the whole content -->
+    <div class="card">
+        <div class="menu-header-container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <div class="nav-item">
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-item" href="#"><img src="images/logo.svg" style="padding-right: 50px;"></a>
+                        </li>
+                        <li class="nav-item pr-3">
+                            <a class="nav-link" href="#">Collections</a>
+                        </li>
+                        <li class="nav-item pr-3">
+                            <a class="nav-link" href="#">Men</a>
+                        </li>
+                        <li class="nav-item pr-3">
+                            <a class="nav-link" href="#">Women</a>
+                        </li>
+                        <li class="nav-item pr-3">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item pr-3">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
 
-  Sneaker Company
+            </nav>
+            <div class="checkout-menu-container">
+                <div class="navContainer">
+                    <!--Cart Icon-->
+                    <a class="nav-link" id="header-menu-shopping-cart" href="#">
+                        <div class="checkout-amount">0</div>
+                        <img src="images/icon-cart.svg" id="cart-icon"></a>
+                    <!--Avatar-->
+                    <a class="nav-link" href="#"><img id="avatar" src="images/image-avatar.png"></a>
 
-  Fall Limited Edition Sneakers
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+                    <!--Shopping Cart-->
+                    <div class="cart">
+                        <h3> Cart </h3>
+                        <!--Content-->
+                        <div class="cart-content">
+                            <div class="cart-box">
+                                <img src="images/image-product-1-thumbnail.jpg" class="cart-img">
+                                <div class="detail-box">
+                                    <div class="cart-product-title">Fall Limited Edition Sneakers</div>
+                                    <div class="cart-price">$125</div>
+                                    <div class="cart-quantity"> 0 </div>
+                                </div>
+                                <!--Remove Cart-->
+                                <img src="images/icon-delete.svg" class="cart-remove">
+                            </div>
+                        </div>
+                        <!--Total-->
+                        <div class="total">$0</div>
+                        <!--Checkout Button-->
+                        <button type="button" class="btn-checkout">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  $125.00
-  50%
-  $250.00
 
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+        <div class="product-content">
+
+            <!--wrapper for main content -->
+            <div class="row">
+                <!--lightbox column -->
+
+                <div class="col-6">
+                    <div class="container">
+                        <div class="row p-5">
+                            <div class="col-8 mx-auto">
+                                <img src="images/image-product-1.jpg" id="header-image">
+                                <div class="row">
+                                    <div class="col-12" style="position:fixed">
+                                        <img src="images/image-product-1-thumbnail.jpg" id="thumbnail-1">
+                                        <img src="images/image-product-2-thumbnail.jpg" id="thumbnail-2">
+                                        <img src="images/image-product-3-thumbnail.jpg" id="thumbnail-3">
+                                        <img src="images/image-product-4-thumbnail.jpg" id="thumbnail-4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+                <!--info section -->
+                <div class=" col p-5">
+                    <h2> SNEAKER COMPANY </h2>
+                    <h1> Fall Limited Edition Sneakers</h1>
+                    <p> These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everthing the weather can offer.</p>
+                    <h1> $125.00</h1>
+                    <p> $250 </p>
+                    <a href="#" class="btn btn-warning" id="decrement">-</a>
+                    <a href="#" class="btn btn-warning" id="counter">0</a>
+                    <a href="#" class="btn btn-warning" id="increment">+</a>
+                    <a href="#" class="btn btn-primary" id="addToCart"><img src="images/icon-cart.svg"> Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
