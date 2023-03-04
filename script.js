@@ -4,8 +4,9 @@ let cart = document.querySelector('.cart');
 var cartShowing = false;
 
 // Toggle Cart //
-cartIcon.onclick = () => {
-    // Cart is not showing then add active class //
+cartIcon.onclick = (event) => {
+    event.preventDefault()
+        // Cart is not showing then add active class //
     cart.classList.remove("checkout");
     if (!cartShowing) {
 
@@ -32,11 +33,13 @@ let cartPrice = document.querySelector('.total')
 
 
 // Increment or decrement on click //
-increment.onclick = () => {
+increment.onclick = (event) => {
+    event.preventDefault()
     sendToCart++;
     updateCounter();
 };
-decrement.onclick = () => {
+decrement.onclick = (event) => {
+    event.preventDefault()
     sendToCart--;
     if (sendToCart < 0) {
         sendToCart = 0;
@@ -72,7 +75,8 @@ function updateCounter() {
 
 
 // Transfers items to the cart then resets counter //
-addToCart.onclick = () => {
+addToCart.onclick = (event) => {
+    event.preventDefault()
     itemsInCart += sendToCart;
     sendToCart = 0;
     updateCounter();
@@ -83,7 +87,8 @@ addToCart.onclick = () => {
 
 let removeCartItems = document.querySelector('.cart-remove');
 
-removeCartItems.onclick = () => {
+removeCartItems.onclick = (event) => {
+    event.preventDefault()
     itemsInCart = 0;
     updateCounter();
 }
@@ -93,7 +98,8 @@ updateCounter();
 
 let checkoutButton = document.querySelector('.btn-checkout');
 
-checkoutButton.onclick = () => {
+checkoutButton.onclick = (event) => {
+    event.preventDefault()
     cart.classList.remove("active");
     cartShowing = false;
     itemsInCart = 0;
@@ -117,23 +123,27 @@ let headerMainImage = document.querySelector('#header-image');
 let lightboxMainImage = document.querySelector('.lightbox-header-image');
 lightboxContainer.classList.add('hide');
 
-dropdownButton.onclick = () => {
+dropdownButton.onclick = (event) => {
+    event.preventDefault()
     dropdownMenu.classList.add('active');
 
 }
 
-closeMenuButton.onclick = () => {
+closeMenuButton.onclick = (event) => {
+    event.preventDefault()
     dropdownMenu.classList.remove('active');
 }
 
 
 // Lightbox //
 
-openLightBox.onclick = () => {
+openLightBox.onclick = (event) => {
+    event.preventDefault()
     lightboxContainer.classList.remove('hide');
 }
 
-lightboxClose.onclick = () => {
+lightboxClose.onclick = (event) => {
+    event.preventDefault()
     lightboxContainer.classList.add('hide');
 }
 
@@ -152,19 +162,23 @@ for (let index = 0; index < thumbsArray.length; index++) {
     thumbsLightboxArray[index].src = "images/" + imagesArray[index] + "-thumbnail.jpg";
 
 }
-lightboxPrev.onclick = () => {
+lightboxPrev.onclick = (event) => {
+    event.preventDefault()
     prevImage();
 }
 
-lightboxNext.onclick = () => {
+lightboxNext.onclick = (event) => {
+    event.preventDefault()
     nextImage();
 }
 
-mainPrev.onclick = () => {
+mainPrev.onclick = (event) => {
+    event.preventDefault()
     prevImage();
 }
 
-mainNext.onclick = () => {
+mainNext.onclick = (event) => {
+    event.preventDefault()
     nextImage();
 }
 
