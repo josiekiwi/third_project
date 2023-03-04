@@ -28,6 +28,8 @@ let sendToCart = 0;
 let itemsInCart = 0;
 let quantityInCart = document.querySelector('.cart-quantity');
 let miniCartCounter = document.querySelector('.checkout-amount');
+let cartContent = document.querySelector('.cart-content');
+let emptyCartContent = document.querySelector('.empty-cart-content');
 
 
 
@@ -56,9 +58,13 @@ function updateCounter() {
     quantityInCart.innerHTML = itemsInCart;
     miniCartCounter.innerHTML = itemsInCart;
     if (itemsInCart == 0) {
+        cartContent.classList.add('empty');
         miniCartCounter.classList.add('none');
+        emptyCartContent.classList.remove('empty');
     } else {
+        cartContent.classList.remove('empty');
         miniCartCounter.classList.remove('none');
+        emptyCartContent.classList.add('empty');
     }
     finalPrice = itemsInCart * itemPrice;
     cartPrice.innerHTML = "$ " + finalPrice;
@@ -94,5 +100,23 @@ let checkoutButton = document.querySelector('.btn-checkout');
 checkoutButton.onclick = () => {
     cart.classList.remove("active");
     cartShowing = false;
+    itemsInCart = 0;
+    updateCounter();
 
+}
+
+// Dropdown Menu //
+
+let dropdownButton = document.querySelector('.toggle_btn');
+let dropdownMenu = document.querySelector('.dropdown-menu');
+let closeMenuButton = document.querySelector('.menu-close-button');
+
+
+dropdownButton.onclick = () => {
+    dropdownMenu.classList.add('active');
+
+}
+
+closeMenuButton.onclick = () => {
+    dropdownMenu.classList.remove('active');
 }

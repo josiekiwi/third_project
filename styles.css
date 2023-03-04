@@ -1,46 +1,118 @@
+/* main body */
+
 body {
     font-family: 'Kumbh Sans', sans-serif!important;
-    background-color: lightgrey;
-    overflow: hidden;
 }
 
-.card {
-    width: 90vw;
-    height: 85vh;
-    margin-top: 10vh;
-    margin-left: 5vw;
+
+/* Navbar 2 */
+
+li {
+    list-style: none;
 }
 
-.checkout-menu-container {
-    float: left;
+a {
+    text-decoration: none;
+    color: hsl(220, 14%, 75%)!important;
+    font-size: 1rem;
 }
 
-.menu-header-container {
-    display: flex;
-    justify-content: space-between;
+a:hover {
+    color: hsl(26, 100%, 55%)!important;
+    cursor: pointer;
+}
+
+.header {
+    position: relative;
+    padding: 30px;
 }
 
 .navbar {
-    border-bottom: 1px solid lightgrey;
+    width: 100%;
+    height: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px hsl(230, 14%, 91%)!important;
 }
 
-.nav-item {
-    /* padding-right: 40px; */
-    padding-bottom: 10px;
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+    margin-left: -100px;
 }
 
-#header-menu-shopping-cart {
-    float: right;
+li img {
+    margin-right: 10px;
+}
+
+.navbar .toggle_btn {
+    color: hsl(219, 9%, 45%)!important;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
 }
 
 #avatar {
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
+    margin-top: -10px;
+}
+
+.icon-container {
+    display: flex;
+}
+
+.logo {
+    margin-left: 90px;
+    margin-top: -10px;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+
+/* dropdown menu */
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-menu {
+    background-color: white;
+    border: none;
+    display: none;
+    height: 100vh;
+    top: 0;
+    width: 60%;
+}
+
+.dropdown-menu a {
+    color: hsl(217, 8%, 30%)!important;
+}
+
+.dropdown-menu img {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+
+/* Main Content */
+
+.header-container {
+    margin-top: 20%;
 }
 
 #header-image {
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
     border-radius: 20px;
 }
 
@@ -48,27 +120,16 @@ body {
 #thumbnail-2,
 #thumbnail-3,
 #thumbnail-4 {
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
     border-radius: 20px;
-    padding: 5px;
-    margin-left: 2px;
-}
-
-.navContainer {
-    float: right;
-    text-align: right;
-}
-
-.test {
-    text-align: right;
+    margin-left: 10px;
+    padding: 12px;
+    margin-top: 20px;
 }
 
 
 /* Anything Cart Related!! */
-
-
-/*https://www.youtube.com/watch?v=18Jvyp60Vbg&t=460s*/
 
 .cart {
     position: fixed;
@@ -114,11 +175,136 @@ h3 {
     display: none;
 }
 
-.lightbox {
+.cart-content.empty {
     display: none;
+}
+
+.lightbox {
     position: absolute;
+    top: 0%;
     z-index: 1;
     width: 100%;
     height: 100%;
-    background-color: #000000db;
+    background-color: #000000cc;
+}
+
+.empty-cart-content {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-cart-content.empty {
+    display: none;
+}
+
+
+/* Lightbox */
+
+.lightbox {
+    display: none;
+}
+
+.lightbox #header-image {
+    margin-top: 50px;
+    height: 500px;
+    width: 500px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.lightbox #thumbnail-1,
+.lightbox #thumbnail-2,
+.lightbox #thumbnail-3,
+.lightbox #thumbnail-4 {
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    margin-left: 15px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.lightbox .previous-button,
+.next-button {
+    position: absolute;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: none;
+    top: 40%
+}
+
+.lightbox .next-button {
+    margin-left: 210px;
+}
+
+.lightbox .previous-button {
+    margin-left: -260px;
+}
+
+.lightbox .close-button {
+    position: absolute;
+    margin-left: 210px;
+    background: transparent;
+}
+
+.lightbox-container {
+    text-align: center;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .main-wrapper {
+        background-color: rgba(255, 0, 43, 0.219)!important;
+    }
+    #thumbnail-container {
+        display: none;
+    }
+}
+
+
+/* Mobile */
+
+@media(max-width: 992px) {
+    .navbar .links {
+        display: none;
+    }
+    .navbar .toggle_btn {
+        display: block;
+    }
+    .navbar {
+        flex-direction: row-reverse;
+    }
+    .logo {
+        display: none;
+    }
+    .logo-mobile {
+        display: block;
+    }
+    .main-wrapper {
+        viewport-fit: 100%;
+        background-color: rgba(0, 0, 255, 0.178)!important;
+    }
+    .thumbnail-container {
+        display: none;
+    }
+    .header-container {
+        margin-top: 0px;
+        text-align: center;
+    }
+    #gallery-header-container {}
+    #sneaker-content-container {
+        padding-top: 50px;
+        text-align: left;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #header-image {
+        border-radius: 0;
+        transition: 2s;
+    }
 }
