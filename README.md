@@ -34,7 +34,7 @@ Users should be able to:
 
 ![](screenshots/landing-page-solution.png)
 
-![](screenshots/lightbox-solution.png)
+![](screenshots/Lightbox-solution.png)
 
 ![](screenshots/mobile-solution.png)
 
