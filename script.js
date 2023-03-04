@@ -101,7 +101,7 @@ checkoutButton.onclick = () => {
 
 }
 
-// Dropdown Menu //
+// Dropdown Menu and Lightbox //
 
 let dropdownButton = document.querySelector('.toggle_btn');
 let dropdownMenu = document.querySelector('.dropdown-menu');
@@ -125,6 +125,9 @@ dropdownButton.onclick = () => {
 closeMenuButton.onclick = () => {
     dropdownMenu.classList.remove('active');
 }
+
+
+// Lightbox //
 
 openLightBox.onclick = () => {
     lightboxContainer.classList.remove('hide');
