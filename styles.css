@@ -2,24 +2,27 @@
 
 body {
     font-family: 'Kumbh Sans', sans-serif!important;
+    font-size: 16px;
 }
 
 
-/* Navbar 2 */
+/* Navbar */
 
 li {
     list-style: none;
 }
 
-a {
+li a {
     text-decoration: none;
     color: hsl(220, 14%, 75%)!important;
     font-size: 1rem;
 }
 
-a:hover {
-    color: hsl(26, 100%, 55%)!important;
+li a:hover {
+    color: hsl(219, 9%, 45%)!important;
     cursor: pointer;
+    border-bottom: 2px solid hsl(26, 100%, 55%)!important;
+    padding-bottom: 25px;
 }
 
 .header {
@@ -59,6 +62,11 @@ li img {
     height: 45px;
     width: 45px;
     margin-top: -10px;
+}
+
+#avatar:hover {
+    border: 1px solid white!important;
+    border-radius: 50%;
 }
 
 .icon-container {
@@ -106,6 +114,9 @@ li img {
 
 /* Main Content */
 
+
+/* Gallery */
+
 .header-container {
     margin-top: 20%;
 }
@@ -126,6 +137,101 @@ li img {
     margin-left: 10px;
     padding: 12px;
     margin-top: 20px;
+}
+
+#thumbnail-1:hover,
+#thumbnail-2:hover,
+#thumbnail-3:hover,
+#thumbnail-4:hover {
+    border: 2px solid hsla(26, 100%, 55%, 0.945)!important;
+    padding: 0;
+    pointer: cursor;
+}
+
+#thumbnail-1:focus,
+#thumbnail-2:focus,
+#thumbnail-3:focus,
+#thumbnail-4:focus {
+    border: 2px solid hsla(26, 100%, 55%, 0.945)!important;
+    padding: 0;
+    background-color: hsla(26, 100%, 55%, 0.411)!important;
+}
+
+
+/* Info Section */
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    color: hsla(26, 100%, 55%, 0.945)!important;
+    font-weight: 700;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+p {
+    color: hsl(219, 9%, 45%)!important;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.p-strike-through {
+    text-decoration: line-through;
+    font-weight: 700;
+    color: hsl(216, 20%, 69%)!important;
+}
+
+#addToCart {
+    color: white!important;
+    background-color: hsl(26, 100%, 55%)!important;
+    height: 60px;
+    width: 270px;
+    padding: 20px;
+    text-align: center;
+    line-height: 0px;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+#addToCart:hover {
+    background-color: hsl(26, 98%, 49%)!important;
+}
+
+#addToCart:focus {
+    background-color: hsla(26, 100%, 55%, 0.411)!important;
+    box-shadow: none;
+}
+
+#addToCart img {
+    color: white!important;
+    padding-left: 5px;
+}
+
+#counter,
+#decrement,
+#increment {
+    height: 50px;
+    width: 50px;
+    background-color: hsl(223, 64%, 98%)!important;
+    font-weight: 700;
+    text-align: center;
+    line-height: 30px;
+}
+
+.fifty-percent {
+    background-color: hsla(26, 100%, 80%, 0.575);
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    color: hsl(26, 100%, 55%);
+    margin-left: 0;
+    float: right;
+    margin-right: 200px;
 }
 
 
@@ -164,11 +270,24 @@ h3 {
 }
 
 .cart-img {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     float: left;
-    border-radius: 7px;
+    border-radius: 10px;
     padding: 5px;
+}
+
+.checkout-amount {
+    background-color: hsl(26, 100%, 55%)!important;
+    border-radius: 45%;
+    height: 15px;
+    width: 20px;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    margin-top: -6px;
+    margin-left: 10px;
 }
 
 .checkout-amount.none {
@@ -197,6 +316,48 @@ h3 {
 
 .empty-cart-content.empty {
     display: none;
+}
+
+.cart-quantity {
+    width: 50px;
+    float: right;
+    color: hsl(219, 9%, 45%);
+}
+
+.cart-price {
+    width: 50px;
+    float: right;
+    color: hsl(219, 9%, 45%);
+}
+
+.cart-remove {
+    width: 15px;
+    float: right;
+    top: 0;
+    right: 0;
+    display: flex;
+}
+
+.total {
+    width: 50px;
+    float: right;
+}
+
+.btn-checkout {
+    color: white;
+    background-color: hsl(26, 100%, 55%);
+    height: 60px;
+    width: 270px;
+    padding: 20px;
+    text-align: center;
+    line-height: 0px;
+    border-radius: 15px;
+    font-weight: 700;
+    border: none;
+}
+
+.btn-checkout:hover {
+    background-color: hsl(26, 98%, 49%)!important;
 }
 
 
@@ -306,5 +467,19 @@ h3 {
     #header-image {
         border-radius: 0;
         transition: 2s;
+    }
+    .cart {
+        position: fixed;
+        margin-right: -140px;
+        top: 200px;
+        right: -100%;
+        width: 350px;
+        min-height: 230px;
+        padding: 20px;
+        background: white;
+        box-shadow: none;
+        z-index: 5000;
+        border-radius: 10px;
+        transition: 0.3s;
     }
 }
