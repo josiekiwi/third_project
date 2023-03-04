@@ -119,12 +119,27 @@ li img {
 
 .header-container {
     margin-top: 20%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 #header-image {
     height: 400px;
     width: 400px;
     border-radius: 20px;
+}
+
+#lightbox-thumbnail-1,
+#lightbox-thumbnail-2,
+#lightbox-thumbnail-3,
+#lightbox-thumbnail-4 {
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    margin-left: 20px;
+    padding: 12px;
+    margin-top: 20px;
 }
 
 #thumbnail-1,
@@ -134,7 +149,7 @@ li img {
     height: 100px;
     width: 100px;
     border-radius: 20px;
-    margin-left: 10px;
+    margin-left: -10px;
     padding: 12px;
     margin-top: 20px;
 }
@@ -148,10 +163,14 @@ li img {
     pointer: cursor;
 }
 
-#thumbnail-1:focus,
-#thumbnail-2:focus,
-#thumbnail-3:focus,
-#thumbnail-4:focus {
+#lightbox-thumbnail-1.selected,
+#lightbox-thumbnail-2.selected,
+#lightbox-thumbnail-3.selected,
+#lightbox-thumbnail-4.selected,
+#thumbnail-1.selected,
+#thumbnail-2.selected,
+#thumbnail-3.selected,
+#thumbnail-4.selected {
     border: 2px solid hsla(26, 100%, 55%, 0.945)!important;
     padding: 0;
     background-color: hsla(26, 100%, 55%, 0.411)!important;
@@ -193,6 +212,7 @@ p {
     line-height: 0px;
     border-radius: 15px;
     font-weight: 700;
+    margin: 10px;
 }
 
 #addToCart:hover {
@@ -249,6 +269,8 @@ p {
     z-index: 5000;
     border-radius: 10px;
     transition: 0.3s;
+    color: hsl(219, 9%, 45%);
+    font-family: 'Kumbh Sans', sans-serif!important;
 }
 
 .cart.active {
@@ -307,6 +329,10 @@ h3 {
     background-color: #000000cc;
 }
 
+.lightbox.hide {
+    display: none;
+}
+
 .empty-cart-content {
     margin-top: 50px;
     display: flex;
@@ -339,8 +365,7 @@ h3 {
 }
 
 .total {
-    width: 50px;
-    float: right;
+    width: 100%;
 }
 
 .btn-checkout {
@@ -360,14 +385,28 @@ h3 {
     background-color: hsl(26, 98%, 49%)!important;
 }
 
-
-/* Lightbox */
-
-.lightbox {
+.main-previous-button {
     display: none;
 }
 
-.lightbox #header-image {
+.main-next-button {
+    display: none;
+}
+
+
+/* Lightbox */
+
+.open-lightbox-container {}
+
+.open-lightbox-button {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.lightbox-header-image {
     margin-top: 50px;
     height: 500px;
     width: 500px;
@@ -375,20 +414,9 @@ h3 {
     border-radius: 20px;
 }
 
-.lightbox #thumbnail-1,
-.lightbox #thumbnail-2,
-.lightbox #thumbnail-3,
-.lightbox #thumbnail-4 {
-    height: 100px;
-    width: 100px;
-    border-radius: 20px;
-    margin-left: 15px;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-.lightbox .previous-button,
-.next-button {
+.lightbox-thumbnail,
+.lightbox-previous-button,
+.lightbox-next-button {
     position: absolute;
     border-radius: 50%;
     height: 50px;
@@ -397,18 +425,20 @@ h3 {
     top: 40%
 }
 
-.lightbox .next-button {
+.lightbox .lightbox-next-button {
     margin-left: 210px;
 }
 
-.lightbox .previous-button {
+.lightbox .lightbox-previous-button {
     margin-left: -260px;
 }
 
-.lightbox .close-button {
+.lightbox .lightbox-close-button {
     position: absolute;
     margin-left: 210px;
     background: transparent;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .lightbox-container {
@@ -481,5 +511,26 @@ h3 {
         z-index: 5000;
         border-radius: 10px;
         transition: 0.3s;
+    }
+    .main-previous-button {
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        height: 50px;
+        margin-left: -320px;
+        width: 50px;
+        border: none;
+        top: 40%
+    }
+    .main-next-button {
+        display: block;
+        position: absolute;
+        float: right;
+        margin-left: 320px;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        border: none;
+        top: 40%
     }
 }

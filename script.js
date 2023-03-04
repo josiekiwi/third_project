@@ -24,12 +24,10 @@ let increment = document.querySelector('#increment');
 let decrement = document.querySelector('#decrement');
 let counter = document.querySelector('#counter');
 let addToCart = document.querySelector('#addToCart');
-let sendToCart = 0;
-let itemsInCart = 0;
-let quantityInCart = document.querySelector('.cart-quantity');
 let miniCartCounter = document.querySelector('.checkout-amount');
 let cartContent = document.querySelector('.cart-content');
 let emptyCartContent = document.querySelector('.empty-cart-content');
+let cartPrice = document.querySelector('.total')
 
 
 
@@ -49,13 +47,13 @@ decrement.onclick = () => {
 
 // Changes innerHTML of counter button //
 
+let sendToCart = 0;
+let itemsInCart = 0;
 let itemPrice = 125
 let finalPrice = 0
-let cartPrice = document.querySelector('.total')
 
 function updateCounter() {
     counter.innerHTML = sendToCart;
-    quantityInCart.innerHTML = itemsInCart;
     miniCartCounter.innerHTML = itemsInCart;
     if (itemsInCart == 0) {
         cartContent.classList.add('empty');
@@ -67,7 +65,7 @@ function updateCounter() {
         emptyCartContent.classList.add('empty');
     }
     finalPrice = itemsInCart * itemPrice;
-    cartPrice.innerHTML = "$ " + finalPrice;
+    cartPrice.innerHTML = "$" + itemPrice + " x " + itemsInCart + "<b>  $" + finalPrice + "</b>";
 
 
 }
@@ -78,8 +76,6 @@ addToCart.onclick = () => {
     itemsInCart += sendToCart;
     sendToCart = 0;
     updateCounter();
-
-
 
 };
 
@@ -110,7 +106,16 @@ checkoutButton.onclick = () => {
 let dropdownButton = document.querySelector('.toggle_btn');
 let dropdownMenu = document.querySelector('.dropdown-menu');
 let closeMenuButton = document.querySelector('.menu-close-button');
-
+let openLightBox = document.querySelector('.open-lightbox-button');
+let lightboxContainer = document.querySelector('.lightbox');
+let lightboxClose = document.querySelector('.lightbox-close-button');
+let lightboxPrev = document.querySelector('.lightbox-previous-button');
+let lightboxNext = document.querySelector('.lightbox-next-button');
+let mainPrev = document.querySelector('.main-previous-button');
+let mainNext = document.querySelector('.main-next-button');
+let headerMainImage = document.querySelector('#header-image');
+let lightboxMainImage = document.querySelector('.lightbox-header-image');
+lightboxContainer.classList.add('hide');
 
 dropdownButton.onclick = () => {
     dropdownMenu.classList.add('active');
@@ -119,4 +124,75 @@ dropdownButton.onclick = () => {
 
 closeMenuButton.onclick = () => {
     dropdownMenu.classList.remove('active');
+}
+
+openLightBox.onclick = () => {
+    lightboxContainer.classList.remove('hide');
+}
+
+lightboxClose.onclick = () => {
+    lightboxContainer.classList.add('hide');
+}
+
+let currentImageId = 0;
+let imagesArray = ["image-product-1", "image-product-2", "image-product-3", "image-product-4"]
+let thumbsArray = []
+let thumbsLightboxArray = []
+
+for (let index = 0; index < imagesArray.length; index++) {
+    thumbsArray.push(document.querySelector('#thumbnail-' + (index + 1)))
+    thumbsLightboxArray.push(document.querySelector('#lightbox-thumbnail-' + (index + 1)))
+}
+
+for (let index = 0; index < thumbsArray.length; index++) {
+    thumbsArray[index].src = "images/" + imagesArray[index] + "-thumbnail.jpg";
+    thumbsLightboxArray[index].src = "images/" + imagesArray[index] + "-thumbnail.jpg";
+
+}
+lightboxPrev.onclick = () => {
+    prevImage();
+}
+
+lightboxNext.onclick = () => {
+    nextImage();
+}
+
+mainPrev.onclick = () => {
+    prevImage();
+}
+
+mainNext.onclick = () => {
+    nextImage();
+}
+
+updateLightBox();
+
+function prevImage() {
+    currentImageId--;
+    if (currentImageId < 0) {
+        currentImageId += imagesArray.length;
+    }
+    updateLightBox();
+}
+
+function nextImage() {
+    currentImageId++;
+    currentImageId %= imagesArray.length;
+
+    updateLightBox();
+
+}
+
+function updateLightBox() {
+    console.log(currentImageId)
+    lightboxMainImage.src = "images/" + imagesArray[currentImageId] + ".jpg";
+    headerMainImage.src = "images/" + imagesArray[currentImageId] + ".jpg";
+
+    for (let index = 0; index < thumbsArray.length; index++) {
+        thumbsArray[index].classList.remove("selected")
+        thumbsLightboxArray[index].classList.remove("selected")
+    }
+
+    thumbsLightboxArray[currentImageId].classList.add("selected")
+
 }
