@@ -14,6 +14,7 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
+  - [Validation](#validation)
 - [Acknowledgments](#acknowledgments)
 
 
@@ -66,6 +67,14 @@ Users should be able to:
 - Flexbox
 - Javascript
 
+## Deployment
+
+I deployed to Github pages with the following process:
+
+- Created a branch called gh-pages in the mac app
+- Pushed latest code to that branch 
+
+
 
 ### What I learned
 
@@ -83,12 +92,24 @@ Javascript is definitely my weakest area, I get very confused with syntax. I'm a
 - codepen.io - This was a really useful sandbox for me to try ideas and concepts out 
 - (https://www.youtube.com/watch?v=GdrbE-s5DgQ&t=532s) - This tutorial was excellent for helping me get the nav looking as it should 
 
+### Validation
 
+- https://codebeautify.org/jsvalidate for JS Validation. 
+
+It threw 2 errors but I didn't understand what they meant so I left them there!!
+
+- https://jigsaw.w3.org/css-validator/ for CSS. A couple of little syntax errors in this but easily fixed.
+
+- https://validator.w3.org/ for HTML. This threw up about 50 errors and gave me a heart attack. Until I realised I hadn't included an Alt"" in any of my images (oops). There were also a couple of rogue divs which were easily deleted. However a rogue div still remains in the lightbox, because even though apparently it is a closing div without an opening, when I delete it the lightbox buttons go flying all over the page. I haven't worked that one out..
 
 ## Acknowledgments
 
-My husband Jeff for helping me with the javascript and talking through the logic I needed. I definitely learnt a lot of useful things and feel confident recreating a similar project in the future
-
-https://github.com/jefframos 
+My husband Jeff for helping me with the javascript and talking through the logic I needed. I definitely learnt a lot of useful things and feel confident recreating a similar project in the future. Check him out at https://github.com/jefframos 
 
 This tutorial: (https://www.youtube.com/watch?v=GdrbE-s5DgQ&t=532s)
+
+Google Fonts and Font Awesome!
+
+W3 schools for always having helpful solutions and of course, google 
+
+My mentor Scott for being a hero! 
