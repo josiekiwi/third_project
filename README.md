@@ -94,9 +94,7 @@ Javascript is definitely my weakest area, I get very confused with syntax. I'm a
 
 ### Validation
 
-- https://codebeautify.org/jsvalidate for JS Validation. 
-
-It threw 2 errors but I didn't understand what they meant so I left them there!!
+- https://codebeautify.org/jsvalidate for JS Validation. It threw 2 errors but I didn't understand what they meant so I left them there!!
 
 - https://jigsaw.w3.org/css-validator/ for CSS. A couple of little syntax errors in this but easily fixed.
 
